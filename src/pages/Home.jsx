@@ -1,42 +1,46 @@
-import { useState } from "react"
-import { Box, styled } from "@mui/material"
-import Sunset from "../assets/bg.jpg"
-import Form from "../components/Form"
-import Info from "../components/Info"
+import { useState } from "react" // Import useState hook from React for state management
+import { Box, styled } from "@mui/material" // Import Box component and styled utility from Material-UI
+import Sunset from "../assets/bg.jpg" // Import background image
+import Form from "../components/Form" // Import Form component
+import Info from "../components/Info" // Import Info component
 
+// Create a styled Box component for the main container
 const Component = styled(Box)({
-    height: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center', // Center horizontally
+    height: '100vh', // Full viewport height
+    display: 'flex', // Flexbox layout
+    alignItems: 'center', // Center items vertically
+    justifyContent: 'center', // Center items horizontally
 });
 
+// Create a styled Box component for the image container
 const Image = styled(Box)({
-    backgroundImage: `url(${Sunset})`,
-    width: '27%',
-    height:'80%',
-    backgroundSize: 'cover',
-    borderRadius: '20px 0 0 20px',
+    backgroundImage: `url(${Sunset})`, // Set background image
+    width: '27%', // Image container width
+    height:'80%', // Image container height
+    backgroundSize: 'cover', // Ensure the image covers the entire container
+    borderRadius: '20px 0 0 20px', // Rounded corners on the left side
 });
 
+// Create a styled Box component for the content wrapper
 const ContentWrapper = styled(Box)({
-    width: '73%', // Adjusted width
-    height: '80%',
-    marginLeft: '20px', // Added margin for spacing between image and content
+    width: '73%', // Content wrapper width
+    height: '80%', // Content wrapper height
+    marginLeft: '20px', // Space between image and content
 });
 
+// Define the Home functional component
 const Home = () => {
-    const [result, setResult] = useState({})
-    
+    const [result, setResult] = useState({}) // Declare state variable 'result' with an empty object as the initial value
+
     return (
         <Component>
-            <Image />
-            <ContentWrapper>
-                <Form setResult={setResult}/>
-                <Info result={result}/>
+            <Image /> {/* Render the image container */}
+            <ContentWrapper> {/* Render the content wrapper */}
+                <Form setResult={setResult}/> {/* Render the Form component and pass setResult function as a prop */}
+                <Info result={result}/> {/* Render the Info component and pass result state as a prop */}
             </ContentWrapper>
         </Component>
     )
 }
 
-export default Home
+export default Home // Export the Home component as the default export
