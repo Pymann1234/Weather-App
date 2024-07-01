@@ -43,4 +43,4 @@ const Home = () => {
     )
 }
 
-export default Home // 'default' refers to any default name that can be give to the component 'home'
+export default Home // 'default' refers to any default name that can be give to the component 'Home'
